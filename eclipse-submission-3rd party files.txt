@@ -1,0 +1,80 @@
+2094  git reset --hard aabf561c2e93dd5163fd06828348159f409e4fa7
+2100  git rebase -i HEAD~2
+	-> mark 2 commits as "e" -> edit
+ 2103  git reset HEAD^
+ 
+	=> all changes for EF submission are now checked-out, ready to be added/committed
+- add those files that have no 3rd party content
+- commit them as initial contribution
+- stash the rest of files that contain 3rd party content
+	-> commit them 1 commit per CQ 
+
+
+
+--------------------------
+files to unstage, path relative to Theia root
+--------------------------
+
+upstream project: 
+
+# vs code:
+
+packages/core/src/browser/browser.ts
+	-> MIT license added: d2d6324fb4f072f962fa9aac3f0ec5f00e469468
+	-> https://github.com/Microsoft/vscode/blob/master/src/vs/base/browser/browser.ts#L152
+packages/monaco/src/browser/monaco-keycode-map.ts
+	=> keyboardEvents.ts: packages/monaco/src/browser/monaco-keycode-map.ts
+packages/core/src/browser/icons/replace-all-inverse.svg
+	=> https://github.com/Microsoft/vscode/blob/master/src/vs/editor/contrib/find/images/replace-all-inverse.svg
+packages/core/src/browser/icons/replace-all.svg
+	=> https://github.com/Microsoft/vscode/blob/master/src/vs/editor/contrib/find/images/replace-all.svg
+packages/core/src/browser/icons/replace-inverse.svg
+	=> https://github.com/Microsoft/vscode/blob/master/src/vs/editor/contrib/find/images/replace-inverse.svg
+
+
+# ...
+
+
+packages/core/src/common/cancellation.ts
+packages/core/src/browser/icons/case-sensitive-dark.svg
+packages/core/src/browser/icons/case-sensitive.svg
+packages/core/src/browser/icons/clear-search-results-dark.svg
+packages/core/src/browser/icons/clear-search-results.sv
+packages/core/src/browser/icons/CollapseAll_inverse.svg
+packages/core/src/browser/icons/CollapseAll.svg
+packages/git/src/browser/style/dirty-diff-decorator.css
+packages/plugin-ext/src/common/editor-options.ts
+packages/preview/src/browser/markdown/style/markdown.css
+
+packages/plugin-ext/src/plugin/prefix-sum-computer.ts
+packages/core/src/browser/icons/Refresh_inverse.svg
+packages/core/src/browser/icons/Refresh.svg
+packages/core/src/browser/icons/regex-dark.svg
+packages/core/src/browser/icons/regex.svg
+packages/core/src/browser/icons/replace.svg
+packages/plugin-ext/src/api/rpc-protocol.ts
+packages/monaco/src/browser/style/symbol-sprite.svg
+packages/typescript/src/browser/typescript-language-config.ts
+packages/core/src/browser/icons/whole-word-dark.svg
+packages/core/src/browser/icons/whole-word.svg
+packages/plugin-ext/src/plugin/word-helper.ts
+examples/browser/wdio.conf.js
+	-> from here> : https://github.com/webdriverio/webdriverio/blob/master/examples/wdio.conf.js
+
+
+
+------------------------
+commit aabf561c2e93dd5163fd06828348159f409e4fa7 (HEAD -> eclipe_foundation_submission, tag: eclipse_initial)
+Author: Paul Maréchal <paul.marechal@ericsson.com>
+Date:   Fri Jun 22 13:05:21 2018 -0400
+[...]
+
+
+commit 1e3f8dbb0915cc8ee2f47ddffa1f7e597cb3f992
+Author: Anton Kosiakov <anton.kosyakov@typefox.io>
+Date:   Fri Jun 22 13:54:39 2018 +0200
+
+    [eclipse] prepare the initial contribution
+    
+    Signed-off-by: Anton Kosiakov <anton.kosyakov@typefox.io>
+
